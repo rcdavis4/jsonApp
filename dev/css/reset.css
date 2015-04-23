@@ -1,0 +1,83 @@
+/*******   Reset.css   *******/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+
+/*******   Box-Sizing & Font Smoothing   *******/
+
+*,
+*:before,
+*:after {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+
+/*******   Font Ligatures and Kerning   *******/
+
+body {
+  text-rendering: optimizeLegibility; /* optional: for older browsers */
+  -webkit-font-variant-ligatures: common-ligatures; /* for iOS and Safari 6 */
+  -moz-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
+
+  /***  Kerning  ***/
+  text-rendering: optimizeLegibility; /* optional: for older browsers */
+  -moz-font-feature-settings: "kern=1"; /* pre-Firefox 14+ */
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern"; /* Firefox 14+ */
+  font-feature-settings: "kern"; /* standard */
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
+  font-kerning: normal; /* Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+*/
+}
+
+/***  Disable text-rendering for speed  ***/
+@media and (max-device-width : 480px) {
+  body {
+    text-rendering: optimizeSpeed;
+  }
+}
+
