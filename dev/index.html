@@ -6,8 +6,6 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="shortcut icon" type="image/x-icon"  href="favicon.ico">
-
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
@@ -17,7 +15,16 @@
 
 <body>
 
+  <div class="row">
+    <form action="" id="search-term" class="col s12">
+      <div class="input-field col s6">
+        <input type="text" placeholder="what do you want to find?" autofocus maxlength="40" required id="query" class="validate">
+        <button>Search</button>
+      </div>
+    </form>
+  </div>
 
+  <div id="search-results"></div>
 
 
   <!-- LOAD JQUERY -->
