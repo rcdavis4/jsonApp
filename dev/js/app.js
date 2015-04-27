@@ -2,40 +2,45 @@
 
 $(function(){
 
+  /* materialize library */
   $('select').material_select();
 
-  $.getJSON('http://omdbapi.com/?s=star%20wars&r=json', function (data) {
-    var myData = data.Search;
-    displayResults(myData);
-  });
+  function getSearchTerm() {
+    var searchTerm = $('#query').val();
 
-//  function displayResults(results) {
-//    $.each(results, function(index, value) {
-//        console.log(value.Title);
-//      $('#search-results').append('<br>' + value.Title + '<br>');
-//    });
-//  }
-
-//  function displayResults(results) {
-//    var html = "";
-//    $.each(results, function(index, value) {
-//      html += '<p>' + value.Title + '</p>';
-//      console.log(value.Title); // to make sure data is coming in
-//    });
-//
-//    $('#search-results').html(html);
-//  }
-
-  function displayResults(results) {
-    var html = [];
-
-    for (var x in results) {
-      html.push('<p>' + results.Title + '</p>');
-    };
-
-    $('#search-results').innerHTML = html.join('');
+    getRequest(searchTerm);
   }
 
+  function getRequest(searchTerm) {
+    var params = { s: searchTerm, r: 'json'};
+    var url = 'http://omdbapi.com';
+
+    $.getJSON(url, params, function(data){
+      displayResults(data.Search);
+    });
+  }
+
+  /* displays json data to the dom */
+  function displayResults(data) {
+    var html = '';
+//    var searchFor = value.Title;
+
+    $.each(data, function(index, value) {
+      html += '<p>' + value.Title + '</p>';
+      console.log(value);
+    });
+
+    $('#search-results').html(html);
+  }
+
+  /* prevents reloading when submiting input */
+  $('form').submit(function(event) {
+    event.preventDefault();
+  });
+
+  $('#searchButton').click(function() {
+    getSearchTerm();
+  });
 
 
-}); // end of document.ready
+}); // end doc.ready
