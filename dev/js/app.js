@@ -5,6 +5,8 @@ $(function(){
   /* materialize library */
   $('select').material_select();
 
+  var key = 'AIzaSyBb5cnb3RHtrmvI0u61NSB4sqoxdQk8NsU';
+
   function getSearchTerm() {
     var searchTerm = $('#query').val();
 
@@ -12,25 +14,25 @@ $(function(){
   }
 
   function getRequest(searchTerm) {
-    var params = { s: searchTerm, r: 'json'};
-    var url = 'http://omdbapi.com';
+    var params = { part: 'snippet', q: searchTerm, key: key };
+    var url = 'https://www.googleapis.com/youtube/v3/search';
 
     $.getJSON(url, params, function(data){
-      displayResults(data.Search);
+      displayResults(data);
+//      console.log(data.items[0].snippet.thumbnails.default.url);
     });
   }
 
   /* displays json data to the dom */
   function displayResults(data) {
     var html = '';
-//    var searchFor = value.Title;
 
-    $.each(data, function(index, value) {
-      html += '<p>' + value.Title + '</p>';
-      console.log(value);
-    });
+    for(var values in data) {
+//      html += '<li><img src="' + data.items[values].snippet.thumbnails.default.url + '"></li>';
+      console.log(data.items[values]);
+    }
 
-    $('#search-results').html(html);
+    $('#results-list').html(html);
   }
 
   /* prevents reloading when submiting input */
@@ -41,6 +43,5 @@ $(function(){
   $('#searchButton').click(function() {
     getSearchTerm();
   });
-
 
 }); // end doc.ready
