@@ -19,12 +19,14 @@
     <form class="col s12">
       <div class="input-field col s6">
         <input type="text" placeholder="For what do you seek?" autofocus autocomplete="off" maxlength="40" required id="query" class="validate">
-        <button id="searchButton" class="btn waves-effect waves-light" type="submit">Search</button>
+        <button id="search-button" class="btn waves-effect waves-light" type="submit">Search</button>
       </div>
     </form>
   </div>
 
-  <div id="search-results"></div>
+  <div id="search-results">
+    <ul id="results-list"></ul>
+  </div>
 
 
   <!-- LOAD JQUERY -->

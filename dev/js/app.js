@@ -19,17 +19,16 @@ $(function(){
 
     $.getJSON(url, params, function(data){
       displayResults(data);
-//      console.log(data.items[0].snippet.thumbnails.default.url);
     });
   }
 
   /* displays json data to the dom */
   function displayResults(data) {
     var html = '';
-
+ console.log(data);
+//    $.each(data, function(index, value)
     for(var values in data) {
-//      html += '<li><img src="' + data.items[values].snippet.thumbnails.default.url + '"></li>';
-      console.log(data.items[values]);
+      html += '<li><img src="' + data.items.snippet.thumbnails.default.url + '"></li>';
     }
 
     $('#results-list').html(html);
@@ -40,7 +39,7 @@ $(function(){
     event.preventDefault();
   });
 
-  $('#searchButton').click(function() {
+  $('#search-button').click(function() {
     getSearchTerm();
   });
 
