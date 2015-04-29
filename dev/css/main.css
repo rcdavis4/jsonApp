@@ -19,7 +19,35 @@ body {
 .content {
   width: 70%;
   margin: 0 auto;
-  padding: 0 0.938rem; /* equiv. to 15px */
+}
+
+
+/*
+  ========================================
+  FORM
+  ========================================
+*/
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+/*
+  ========================================
+  RESULTS LIST
+  ========================================
+*/
+
+.thumbs-container {
+  display: flex;
+  padding-top: 4rem;
+}
+
+.thumbs-list img {
+
 }
 
 

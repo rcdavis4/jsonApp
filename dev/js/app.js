@@ -15,7 +15,7 @@ $(function(){
 
   function getRequest(searchTerm) {
     var params = { part: 'snippet', q: searchTerm, key: key };
-    var url = 'https://www.googleapis.com/youtube/v3/search';
+    var url = 'https://www.googleapis.com/youtube/v3/search/';
 
     $.getJSON(url, params, function(data){
       displayResults(data);
@@ -25,10 +25,9 @@ $(function(){
   /* displays json data to the dom */
   function displayResults(data) {
     var html = '';
- console.log(data);
-//    $.each(data, function(index, value)
-    for(var values in data) {
-      html += '<li><img src="' + data.items.snippet.thumbnails.default.url + '"></li>';
+
+    for(var x in data.items) {
+      html += '<li><img src="' + data.items[x].snippet.thumbnails.default.url + '"></li>';
     }
 
     $('#results-list').html(html);

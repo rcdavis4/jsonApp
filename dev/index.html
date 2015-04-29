@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
   <link rel="stylesheet" href="css/main.css">
   <script src="js/modernizr.js"></script>
@@ -15,18 +14,20 @@
 
 <body>
 
-  <div class="row">
-    <form class="col s12">
-      <div class="input-field col s6">
+  <div class="content">
+
+    <form>
+      <div class="input-field">
         <input type="text" placeholder="For what do you seek?" autofocus autocomplete="off" maxlength="40" required id="query" class="validate">
-        <button id="search-button" class="btn waves-effect waves-light" type="submit">Search</button>
+      <button id="search-button" class="btn waves-effect waves-light" type="submit">Search</button>
       </div>
     </form>
-  </div>
 
-  <div id="search-results">
-    <ul id="results-list"></ul>
-  </div>
+    <div class="thumbs-container">
+      <ul id="results-list" class="thumbs-list"></ul>
+    </div>
+
+  </div> <!-- end container -->
 
 
   <!-- LOAD JQUERY -->
