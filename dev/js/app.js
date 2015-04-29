@@ -14,7 +14,13 @@ $(function(){
   }
 
   function getRequest(searchTerm) {
-    var params = { part: 'snippet', q: searchTerm, key: key };
+    var params = {
+      part: 'snippet',
+      q: searchTerm,
+      key: key,
+      maxResults: 10
+    };
+
     var url = 'https://www.googleapis.com/youtube/v3/search/';
 
     $.getJSON(url, params, function(data){
@@ -25,9 +31,10 @@ $(function(){
   /* displays json data to the dom */
   function displayResults(data) {
     var html = '';
+    var videoUrl = 'https://www.youtube.com/watch/';
 
     for(var x in data.items) {
-      html += '<li><img src="' + data.items[x].snippet.thumbnails.default.url + '"></li>';
+      html += '<li><a href="' + videoUrl + data.items[x].id.videoId + '" target="_blank"><img src="' + data.items[x].snippet.thumbnails.medium.url + '"></a></li>';
     }
 
     $('#results-list').html(html);
