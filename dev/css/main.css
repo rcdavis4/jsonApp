@@ -24,6 +24,41 @@ body {
 
 /*
   ========================================
+  HEADER
+  ========================================
+*/
+
+header {
+  width: 100%;
+  padding: 1.4rem 0;
+  margin-bottom: 2rem;
+  border-top: 20px solid #006064;
+  border-bottom: 4px solid #ffab00;
+}
+
+.title-container {
+  margin-top: -1rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: -2rem;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: -3px;
+}
+
+header h4 {
+  font-size: 1.8em;
+  color: #fff;
+  font-weight: 200;
+  word-spacing: -4px;
+}
+
+
+/*
+  ========================================
   FORM
   ========================================
 */
@@ -34,7 +69,7 @@ form {
 }
 
 button {
-  float: right;
+  font-weight: 600;
 }
 
 
@@ -46,13 +81,19 @@ button {
 
 .thumbs-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-flow: row wrap;
   padding-top: 4rem;
 }
 
-.thumbs-list li {
-  padding: 1rem;
+.thumbs-container div {
+  flex: auto;
+  width: 300px;
+  margin: 1vw;
+}
+
+.thumbs-container div img {
+  width: 100%;
+  height: auto;
 }
 
 
@@ -62,26 +103,17 @@ button {
   ========================================
 */
 
-@media only screen and (min-width: 480px) {
-  /* 480 =================================================== */
-}
-@media only screen and (min-width: 600px) {
-  /* 600 =================================================== */
-}
-@media only screen and (min-width: 768px) {
-  /* 768 =================================================== */
-}
-@media only screen and (min-width: 992px) {
-  /* 992 =================================================== */
-}
-@media only screen and (min-width: 1382px) {
-  /* 1382 =================================================== */
-  body {
-    max-width: 1440px;
+@media only screen and (max-width: 480px) {
+  header h1 {
+    font-size: 5em;
+    margin-bottom: -1.4rem;
   }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-  /* 2x =================================================== */
+
+  header h4 {
+    font-size: 1.4em;
+  }
+
+  .title-container {
+  padding: 1rem 0;
+  }
 }

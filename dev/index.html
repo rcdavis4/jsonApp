@@ -14,19 +14,23 @@
 
 <body>
 
+  <header class="cyan darken-3">
+    <div class="title-container">
+      <h1 class="">YouTube</h1>
+      <h4>searching the webs videos</h4>
+    </div>
+  </header>
+
   <div class="content">
 
     <form>
       <div class="input-field">
-        <input type="text" placeholder="For what do you seek?" autofocus autocomplete="off" maxlength="40" required id="query" class="validate">
-      <button id="search-button" class="btn waves-effect waves-light" type="submit">Search</button>
+        <input type="text" placeholder="what do you seek?" autofocus autocomplete="off" maxlength="40" required id="query">
+      <button id="search-button" class="btn waves-effect waves-light amber accent-4" type="submit">Search</button>
       </div>
     </form>
 
-
-    <div class="thumbs-container">
-      <ul id="results-list" class="thumbs-list"></ul>
-    </div>
+    <section id="results-list" class="thumbs-container"></section>
 
   </div> <!-- end content -->
 

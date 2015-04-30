@@ -18,7 +18,7 @@ $(function(){
       part: 'snippet',
       q: searchTerm,
       key: key,
-      maxResults: 10
+      maxResults: 20,
     };
 
     var url = 'https://www.googleapis.com/youtube/v3/search/';
@@ -34,7 +34,7 @@ $(function(){
     var videoUrl = 'https://www.youtube.com/watch/';
 
     for(var x in data.items) {
-      html += '<li><a href="' + videoUrl + data.items[x].id.videoId + '" target="_blank"><img src="' + data.items[x].snippet.thumbnails.medium.url + '"></a></li>';
+      html += '<div><a href="' + videoUrl + data.items[x].id.videoId + '" target="_blank"><img src="' + data.items[x].snippet.thumbnails.high.url + '"></a></div>';
     }
 
     $('#results-list').html(html);
