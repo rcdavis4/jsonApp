@@ -21,6 +21,12 @@ body {
   margin: 0 auto;
 }
 
+nav {
+	position: relative;
+	top: 300px;
+	z-index: 100;
+}
+
 
 /*
   ========================================
@@ -143,7 +149,17 @@ button {
 	font-size: 2.5rem;
   }
   .sticky h1 {
-    text-align: center;
+	text-align: center;
   }
 }
+
+@media only screen and (max-width: 300px) {
+ /* form {
+  padding-top: 60%;
+  }*/
+  header h1 {
+  font-size: 2rem;
+  }
+}
+
 
