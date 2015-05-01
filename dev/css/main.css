@@ -63,11 +63,9 @@ header h1 {
 */
 
 form {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -87,7 +85,6 @@ button {
 */
 
 .thumbs-container {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -98,7 +95,6 @@ button {
 }
 
 .thumbs-container div {
-  -webkit-box-flex: 1;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
@@ -118,19 +114,36 @@ button {
   ========================================
 */
 
-/*
-@media only screen and (max-width: 480px) {
-  header h1 {
-	font-size: 5em;
-	margin-bottom: -1.4rem;
-  }
-
-  header h4 {
-	font-size: 1.4em;
-  }
-
-  .title-container {
-  padding: 1rem 0;
+@media only screen and (max-width: 900px) {
+  form {
+	padding-top: 30%;
   }
 }
-*/
+
+@media only screen and (max-width: 650px) {
+  form {
+	padding-top: 40%;
+  }
+  header h1 {
+	font-size: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header h1 {
+	font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  form {
+	padding-top: 60%;
+  }
+  header h1 {
+	font-size: 2.5rem;
+  }
+  .sticky h1 {
+    text-align: center;
+  }
+}
+
