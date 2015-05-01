@@ -29,31 +29,30 @@ body {
 */
 
 header {
+  position: fixed;
   width: 100%;
-  padding: 1.4rem 0;
-  margin-bottom: 2rem;
-  border-top: 20px solid #006064;
-  border-bottom: 4px solid #ffab00;
-}
-
-.title-container {
-  margin-top: -1rem;
-  padding-bottom: 0.3rem;
-  text-align: center;
+  z-index: 999;
+  height: 6.75rem;
+  transition: all 0.4s ease;
 }
 
 header h1 {
-  margin-bottom: -2rem;
-  color: #fff;
-  font-weight: 400;
-  letter-spacing: -3px;
+  font-size: 4.5rem;
+  line-height: 6.75rem;
+  margin-top: -1px;
+  transition: all 0.4s ease;
 }
 
-header h4 {
-  font-size: 1.8em;
-  color: #fff;
-  font-weight: 200;
-  word-spacing: -4px;
+.sticky {
+  height: 3.5rem;
+}
+
+.sticky > h1 {
+  font-size: 2rem;
+  line-height: 3.5rem;
+  text-align: left;
+  padding-left: 20px;
+  background-color: #90a4ae;
 }
 
 
@@ -72,6 +71,8 @@ form {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding-top: 20%;
+  z-index: -999;
 }
 
 button {
@@ -93,7 +94,7 @@ button {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  padding-top: 4rem;
+  padding-top: 7rem;
 }
 
 .thumbs-container div {
@@ -117,17 +118,19 @@ button {
   ========================================
 */
 
+/*
 @media only screen and (max-width: 480px) {
   header h1 {
-    font-size: 5em;
-    margin-bottom: -1.4rem;
+	font-size: 5em;
+	margin-bottom: -1.4rem;
   }
 
   header h4 {
-    font-size: 1.4em;
+	font-size: 1.4em;
   }
 
   .title-container {
   padding: 1rem 0;
   }
 }
+*/
